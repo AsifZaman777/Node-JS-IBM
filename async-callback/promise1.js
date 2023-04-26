@@ -12,7 +12,7 @@ var promise2 = new Promise((resolve, reject)=>
 {
     setTimeout(()=>
     {
-     
+     resolve("Promise 2 is resolved")
      reject("Promise 2 is rejected ")
     },3000)
 })
