@@ -1,19 +1,10 @@
-// server initialization
-
-const http = require(`http`);
-
-let requestListener = (req, res) =>
+let http = require(`http`);
+let port =8080;
+http.createServer((req, res)=>
 {
-res.writeHead(200);
-res.end("Server is responding");
-}; 
+        res.writeHead(200);
+        res.write('The server is responding. Server is sending the confirmation');
+        res.end();
+}).listen(port);
+console.log('server is listening to port : '+port);
 
-//port initializing 
-var port=8080;
-var server=http.createServer(requestListener);
-console.log("The server is listening to port : "+port);
-server.listen(port);
-
-
-
-// server is ready to listen 
