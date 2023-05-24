@@ -3,15 +3,14 @@ const fs = require('fs');
 const http = require('http');
 const port = 8080;
 
-
 http.createServer((req, res) => {
   fs.open('ICT question.txt', 'r', (err, fd) => {
     if (err) {
       console.log(err);
       res.writeHead(500);
       res.end('Error opening the file');
-    } else {
-
+    } 
+    else {
       fs.readFile(fd, (err, data) => {
         if (err) {
           console.log(err);
@@ -22,8 +21,8 @@ http.createServer((req, res) => {
           res.writeHead(200);
           res.write(data);
           res.end();
+          console.log(fd);
         }
-
         fs.close(fd, (err) => {
           if (err) {
             console.log(err);
